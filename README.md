@@ -35,8 +35,14 @@ channel.on 'msg' do |payload|
 end
 
 # join channel
-channel.join
+channel
+  .join
+  .receive('ok') { $console.log 'ok' }
+  .receive('failed') { $console.log 'failed' }
 
 # push a message
-channel.push("msg", {a: :b})
+channel
+  .push("msg", {a: :b})
+  .receive('ok') { $console.log 'ok' }
+  .receive('failed') { $console.log 'failed' }
 ```

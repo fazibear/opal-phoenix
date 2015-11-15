@@ -2,15 +2,28 @@ module Phoenix
   class Channel
     include Native
 
-    alias_native :join
-    alias_native :push
-
     def initialize(topic, params, this)
       super(`new Phoenix.Channel(#{topic}, #{params.to_n}, #{this})`)
     end
 
     def on(msg, &block)
       `#{@native}.on(#{msg}, #{block})`
+    end
+
+    def push(msg, payload)
+      Push.new `#{@native}.push(#{msg}, #{payload})`
+    end
+
+    def join
+      Push.new `#{@native}.join()`
+    end
+
+    def leave
+      Push.new `#{@native}.leave()`
+    end
+
+    def joined?
+      `#{@native}.joinedOnce`
     end
 
     def on_error(&block)
