@@ -2,7 +2,21 @@
 
 Opal wrapper for [Phoenix Framework](http://phoenixframework.org) javascript library.
 
-## example
+## usage
+
+### Server side (config.ru, Rakefile, Rails, Sinatra, etc.)
+
+```ruby
+require 'opal-phoenix'
+```
+
+or Gemfile
+
+```ruby
+gem 'opal-phoenix'
+```
+
+### Browser side
 
 ```ruby
 require 'phoenix'
