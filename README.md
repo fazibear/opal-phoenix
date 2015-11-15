@@ -4,13 +4,14 @@ Opal wrapper for [Phoenix Framework](http://phoenixframework.org) javascript lib
 
 ## usage
 
-### Server side (config.ru, Rakefile, Rails, Sinatra, etc.)
+### Server side
+config.ru, Rakefile, Rails, Sinatra, etc.
 
 ```ruby
 require 'opal-phoenix'
 ```
 
-or Gemfile
+Gemfile
 
 ```ruby
 gem 'opal-phoenix'
