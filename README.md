@@ -1,6 +1,4 @@
-# opal-phoenix
-[![Gem Version](https://badge.fury.io/rb/opal-phoenix.svg)](http://badge.fury.io/rb/opal-phoenix)
-[![Code Climate](https://codeclimate.com/github/fazibear/opal-phoenix/badges/gpa.svg)](https://codeclimate.com/github/fazibear/opal-phoenix)
+# opal-phoenix [![Gem Version](https://badge.fury.io/rb/opal-phoenix.svg)](http://badge.fury.io/rb/opal-phoenix) [![Code Climate](https://codeclimate.com/github/fazibear/opal-phoenix/badges/gpa.svg)](https://codeclimate.com/github/fazibear/opal-phoenix)
 
 Opal wrapper for [Phoenix Framework](http://phoenixframework.org) javascript library.
 
