@@ -5,6 +5,8 @@ Opal wrapper for [Phoenix Framework](http://phoenixframework.org) javascript lib
 ## example
 
 ```ruby
+require 'phoenix'
+
 # setup socket
 socket = Phoenix::Socket.new('ws://localhost:4000/ws')
 
