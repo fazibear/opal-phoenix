@@ -7,6 +7,7 @@ Opal wrapper for [Phoenix Framework](http://phoenixframework.org) javascript lib
 ```ruby
 # setup socket
 socket = Phoenix::Socket.new('ws://localhost:4000/ws')
+
 socket.on_error do
   $console.log 'socket error!'
 end
@@ -19,8 +20,17 @@ end
 socket.connect
 
 # setup channel
-channel = s.channel('lobby', params: {asd: 'xcvxcv'})
-channel.on("msg") do |payload|
+channel = socket.channel('lobby', params: {asd: 'xcvxcv'})
+
+channel.on_error do
+  $console.log 'channel error!'
+end
+
+channel.on_close do
+  $console.log 'channel closed!'
+end
+
+channel.on 'msg' do |payload|
   $console.log "payload: #{payload}"
 end
 
@@ -28,5 +38,5 @@ end
 channel.join
 
 # push a message
-chan.push("msg", {a: :b})
+channel.push("msg", {a: :b})
 ```
