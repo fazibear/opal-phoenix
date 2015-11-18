@@ -11,7 +11,7 @@ module Phoenix
     end
 
     def push(msg, payload)
-      Push.new `#{@native}.push(#{msg}, #{payload})`
+      Push.new `#{@native}.push(#{msg}, #{payload.to_n})`
     end
 
     def join
