@@ -15,11 +15,17 @@ module Phoenix
     end
 
     def on_error(&block)
-      `#{@native}.onError(#{block})`
+      `#{@native}.onError(#{callback(block)})`
     end
 
     def on_close(&block)
-      `#{@native}.onClose(#{block})`
+      `#{@native}.onClose(#{callback(block)})`
+    end
+
+    def callback(block)
+      proc do |e|
+        block.call(Native(e))
+      end
     end
   end
 end

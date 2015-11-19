@@ -7,7 +7,13 @@ module Phoenix
     end
 
     def receive(msg, &block)
-      Push.new `#{@native}.receive(#{msg}, #{block})`
+      Push.new `#{@native}.receive(#{msg}, #{callback(block)})`
+    end
+
+    def callback(block)
+      proc do |e|
+        block.call(Native(e))
+      end
     end
   end
 end
