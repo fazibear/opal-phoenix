@@ -8,7 +8,7 @@ module Phoenix
       super(`new Phoenix.Socket(#{url.to_s}, #{params.to_n})`)
     end
 
-    def channel(topic, *params)
+    def channel(topic, params)
       chan = Channel.new(topic, params, @native)
       `#{@native}.channels.push(#{chan.to_n})`
       chan
