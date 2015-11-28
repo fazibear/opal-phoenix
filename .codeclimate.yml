@@ -1,2 +1,2 @@
 exclude_paths:
-  - opal/phoenix_js.js
+  - opal/vendor/*
