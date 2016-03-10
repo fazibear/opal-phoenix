@@ -36,7 +36,7 @@ module Phoenix
 
     def callback(block)
       proc do |e|
-        block.call(Native(e))
+        block.call(Hash.new(e))
       end
     end
   end
